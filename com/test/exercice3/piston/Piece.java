@@ -1,20 +1,20 @@
-package com.test.piston;
+package com.test.exercice3.piston;
 
 /**
- * Classe representant les parties abstraites d'un piston
+ * Classe representant les différentes pièces d'un piston
  *
  * @author Ulrich BATABA
  *
  * @since 23/06/2022
  */
-public class PartiePiston {
+public class Piece {
 
     private String nom;
 
-    public PartiePiston() {
+    public Piece() {
     }
 
-    public PartiePiston(String nom) {
+    public Piece(String nom) {
         this.nom = nom;
     }
 

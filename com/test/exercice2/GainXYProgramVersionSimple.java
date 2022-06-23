@@ -1,4 +1,4 @@
-package com.test;
+package com.test.exercice2;
 
 import java.util.*;
 
@@ -20,9 +20,9 @@ public class GainXYProgramVersionSimple {
 	 try{
 	 Scanner scanner = new Scanner(System.in);
 	 System.out.print("Entrer le nombre de chevaux partants: ");
-	 int n = scanner.nextLong();
+	 int n = scanner.nextInt();
 	 System.out.print("Entrer le nombre de chevaux joués: ");
-	 int p = scanner.nextLong();
+	 int p = scanner.nextInt();
 	 
 	 if(n<=0 || p<=0 || n<p){
 		throw new InputMismatchException();

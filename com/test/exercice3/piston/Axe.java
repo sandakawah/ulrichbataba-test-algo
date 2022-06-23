@@ -1,4 +1,4 @@
-package com.test.piston;
+package com.test.exercice3.piston;
 
 /**
  * Classe representant la partie axe du piston
@@ -7,8 +7,8 @@ package com.test.piston;
  *
  * @since 23/06/2022
  */
-public class AxePiston extends  PartiePiston{
-    public AxePiston(String nom) {
+public class Axe extends  Piece{
+    public Axe(String nom) {
         super(nom);
     }
 }

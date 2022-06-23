@@ -1,4 +1,4 @@
-package com.test.piston;
+package com.test.exercice3.piston;
 
 /**
  * Classe representant un piston
@@ -9,40 +9,40 @@ package com.test.piston;
  */
 public class Piston {
 
-    private TetePiston tetePiston;
-    private JupePiston jupePiston;
-    private AxePiston axePiston;
+    private Tete tetePiston;
+    private Jupe jupePiston;
+    private Axe axePiston;
 
     public Piston() {
     }
 
-    public Piston(TetePiston tetePiston, JupePiston jupePiston, AxePiston axePiston) {
+    public Piston(Tete tetePiston, Jupe jupePiston, Axe axePiston) {
         this.tetePiston = tetePiston;
         this.jupePiston = jupePiston;
         this.axePiston = axePiston;
     }
 
-    public TetePiston getTetePiston() {
+    public Tete getTetePiston() {
         return tetePiston;
     }
 
-    public void setTetePiston(TetePiston tetePiston) {
+    public void setTetePiston(Tete tetePiston) {
         this.tetePiston = tetePiston;
     }
 
-    public JupePiston getJupePiston() {
+    public Jupe getJupePiston() {
         return jupePiston;
     }
 
-    public void setJupePiston(JupePiston jupePiston) {
+    public void setJupePiston(Jupe jupePiston) {
         this.jupePiston = jupePiston;
     }
 
-    public AxePiston getAxePiston() {
+    public Axe getAxePiston() {
         return axePiston;
     }
 
-    public void setAxePiston(AxePiston axePiston) {
+    public void setAxePiston(Axe axePiston) {
         this.axePiston = axePiston;
     }
 

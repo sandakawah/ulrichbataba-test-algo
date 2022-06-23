@@ -1,4 +1,4 @@
-package com.test.piston;
+package com.test.exercice3.piston;
 
 /**
  * Classe representant la partie tête du piston
@@ -7,8 +7,8 @@ package com.test.piston;
  *
  * @since 23/06/2022
  */
-public class TetePiston extends PartiePiston {
-    public TetePiston(String nom) {
+public class Tete extends Piece {
+    public Tete(String nom) {
         super(nom);
     }
 }

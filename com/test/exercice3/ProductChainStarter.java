@@ -1,6 +1,6 @@
-package com.test;
+package com.test.exercice3;
 
-import com.test.piston.*;
+import com.test.exercice3.piston.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,32 +21,32 @@ public class ProductChainStarter {
      */
     public static void main(String[] args) {
         System.out.println("Simulation de la chaine de production de 5 pistons\n");
-        List<PartiePiston> cartonsDePieces = chargerPartiesPiston();
+        List<Piece> cartonsDePieces = chargerPieces();
 
-        LinkedBlockingQueue<TetePiston> mtQueue = new LinkedBlockingQueue<>();
-        LinkedBlockingQueue<JupePiston> mjQueue = new LinkedBlockingQueue<>();
-        LinkedBlockingQueue<AxePiston> maQueue = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<Tete> mtQueue = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<Jupe> mjQueue = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<Axe> maQueue = new LinkedBlockingQueue<>();
 
-        cartonsDePieces.forEach(partiePiston -> {
-            if(partiePiston instanceof TetePiston){
-                System.out.println("Passage de la "+ partiePiston.getNom() +" du piston vers la machine MT");
-                mtQueue.add((TetePiston)partiePiston);
+        cartonsDePieces.forEach(piece -> {
+            if(piece instanceof Tete){
+                System.out.println("Passage de la "+ piece.getNom() +" du piston vers la machine MT");
+                mtQueue.add((Tete)piece);
                 waitForThreeSeconds();
-                System.out.println("Usinage de la "+ partiePiston.getNom() +" au niveau de la machine MT\n");
-                waitForThreeSeconds();
-
-            } else if(partiePiston instanceof JupePiston){
-                System.out.println("Passage de la "+ partiePiston.getNom() +" du piston vers la machine MJ");
-                mjQueue.add((JupePiston)partiePiston);
-                waitForThreeSeconds();
-                System.out.println("Usinage de la "+ partiePiston.getNom() +" au niveau de la machine MJ\n");
+                System.out.println("Usinage de la "+ piece.getNom() +" au niveau de la machine MT\n");
                 waitForThreeSeconds();
 
-            } else if(partiePiston instanceof AxePiston){
-                System.out.println("Passage de l'"+ partiePiston.getNom() +" du piston vers la machine MA");
-                maQueue.add((AxePiston)partiePiston);
+            } else if(piece instanceof Jupe){
+                System.out.println("Passage de la "+ piece.getNom() +" du piston vers la machine MJ");
+                mjQueue.add((Jupe)piece);
                 waitForThreeSeconds();
-                System.out.println("Usinage de l'"+ partiePiston.getNom() +" au niveau de la machine MA\n");
+                System.out.println("Usinage de la "+ piece.getNom() +" au niveau de la machine MJ\n");
+                waitForThreeSeconds();
+
+            } else if(piece instanceof Axe){
+                System.out.println("Passage de l'"+ piece.getNom() +" du piston vers la machine MA");
+                maQueue.add((Axe)piece);
+                waitForThreeSeconds();
+                System.out.println("Usinage de l'"+ piece.getNom() +" au niveau de la machine MA\n");
                 waitForThreeSeconds();
             }
         });
@@ -82,27 +82,27 @@ public class ProductChainStarter {
     /**
      * Methode permettant d'initialiser les données de simulation
      */
-    private static List<PartiePiston> chargerPartiesPiston(){
-        List<PartiePiston> cartonsDePieces = new ArrayList<>();
-        cartonsDePieces.add(new TetePiston("Tete1"));
-        cartonsDePieces.add(new JupePiston("Jupe1"));
-        cartonsDePieces.add(new AxePiston("Axe1"));
+    private static List<Piece> chargerPieces(){
+        List<Piece> cartonsDePieces = new ArrayList<>();
+        cartonsDePieces.add(new Tete("Tete1"));
+        cartonsDePieces.add(new Jupe("Jupe1"));
+        cartonsDePieces.add(new Axe("Axe1"));
 
-        cartonsDePieces.add(new TetePiston("Tete2"));
-        cartonsDePieces.add(new JupePiston("Jupe2"));
-        cartonsDePieces.add(new AxePiston("Axe2"));
+        cartonsDePieces.add(new Tete("Tete2"));
+        cartonsDePieces.add(new Jupe("Jupe2"));
+        cartonsDePieces.add(new Axe("Axe2"));
 
-        cartonsDePieces.add(new TetePiston("Tete3"));
-        cartonsDePieces.add(new JupePiston("Jupe3"));
-        cartonsDePieces.add(new AxePiston("Axe3"));
+        cartonsDePieces.add(new Tete("Tete3"));
+        cartonsDePieces.add(new Jupe("Jupe3"));
+        cartonsDePieces.add(new Axe("Axe3"));
 
-        cartonsDePieces.add(new TetePiston("Tete4"));
-        cartonsDePieces.add(new JupePiston("Jupe4"));
-        cartonsDePieces.add(new AxePiston("Axe4"));
+        cartonsDePieces.add(new Tete("Tete4"));
+        cartonsDePieces.add(new Jupe("Jupe4"));
+        cartonsDePieces.add(new Axe("Axe4"));
 
-        cartonsDePieces.add(new TetePiston("Tete5"));
-        cartonsDePieces.add(new JupePiston("Jupe5"));
-        cartonsDePieces.add(new AxePiston("Axe5"));
+        cartonsDePieces.add(new Tete("Tete5"));
+        cartonsDePieces.add(new Jupe("Jupe5"));
+        cartonsDePieces.add(new Axe("Axe5"));
 
         return cartonsDePieces;
     }
